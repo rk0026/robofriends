@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import CardList from '../components/CardList';
-// import { robots } from './robots';
+import robots from '../components/robots';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './App.css';
@@ -33,12 +33,12 @@ class App extends Component {
     // no more state, 剩下props
 
     static propTypes = {
-        onRequestRobots: PropTypes.func.isRequired,
+        // onRequestRobots: PropTypes.func.isRequired,
 
     }
 
     componentDidMount() {
-        this.props.onRequestRobots();
+        // this.props.onRequestRobots();
         // fetch('https://jsonplaceholder.typicode.com/users')
         //     .then(response => response.json())
         //     .then(users => this.setState({ robots: users}));
@@ -50,7 +50,7 @@ class App extends Component {
     // }
 
     render() {
-        const { searchField, onSearchChange, robots, isPending } = this.props;
+        const { searchField, onSearchChange, isPending } = this.props;
         const filteredRobots = robots.filter(robot => robot.name.toLowerCase().includes(searchField.toLowerCase()));
         return isPending // isRending ? true (false)
 
@@ -59,7 +59,7 @@ class App extends Component {
         // } else {
             : (
                 <div className="tc">
-                    <h1 className="f1"> Robofriends </h1>
+                    <h1 className="f1"> Myfriends </h1>
                     <SearchBox searchChange={onSearchChange} />
                     <Scroll>
                         <ErrorBoundry>
