@@ -13,13 +13,13 @@ const robots = [
     },
     {
         id: 3,
-        name: 'Clementine Bauch',
+        name: 'Paul',
         username: 'Samantha',
         email: 'Nathan@yesenia.net',
     },
     {
         id: 4,
-        name: 'Patricia Lebsack',
+        name: 'Denny',
         username: 'Karianne',
         email: 'Julianne.OConner@kory.org',
     },
