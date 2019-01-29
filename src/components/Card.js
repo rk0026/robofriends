@@ -8,11 +8,11 @@ function alerttion(id) {
 const Card = ({ name, email, id }) => (
     <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-s">
         <button className="bg-light-green" type="button" onClick={alerttion(id)}>
-            <h1>myfriend</h1>
+            <h1>friend</h1>
             <img alt="robots" src={`https://robohash.org/${id}?set=set4`} />
             <div>
                 <h2>{name}</h2>
-                <p>{email}</p>
+                {/* <p>{email}</p> */}
             </div>
         </button>
     </div>

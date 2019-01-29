@@ -33,15 +33,14 @@ class App extends Component {
     // no more state, 剩下props
 
     static propTypes = {
-        // onRequestRobots: PropTypes.func.isRequired,
-
+        onRequestRobots: PropTypes.func.isRequired,
     }
 
     componentDidMount() {
-        // this.props.onRequestRobots();
-        // fetch('https://jsonplaceholder.typicode.com/users')
-        //     .then(response => response.json())
-        //     .then(users => this.setState({ robots: users}));
+        this.props.onRequestRobots();
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(users => this.setState({ robots: users}));
     }
 
     // onSearchChange = (event) => {
@@ -53,11 +52,8 @@ class App extends Component {
         const { searchField, onSearchChange, isPending } = this.props;
         const filteredRobots = robots.filter(robot => robot.name.toLowerCase().includes(searchField.toLowerCase()));
 
-        return isPending // isRending ? true (false)
-
-        // if (this.state.robots.length === 0) {
+        return isPending
             ? <h1>Loading</h1>
-        // } else {
             : (
                 <div className="tc">
                     <h1 className="f1"> Myfriends </h1>
